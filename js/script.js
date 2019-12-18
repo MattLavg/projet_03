@@ -20,7 +20,7 @@ function initMap() {
     });
     
     // On récupère les données de l'API de JcDecaux
-    ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=xxx", function (reponse) {
+    ajaxGet("clé JCDECAUX", function (reponse) {
         
         // On gère l'affichage en cas d'erreur de retour de JCDecaux
         if (reponse === false) {
