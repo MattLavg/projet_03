@@ -1,0 +1,189 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Projet 03</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome -->
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- /====== HEADER ======/ -->
+
+    <header id="header">
+
+        <a class= "logo" href="#">
+            <img src="images/logo-velov.png" class="logoVelov" alt="logo Velo'v">
+        </a>
+
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+        <nav>
+            <ul>
+                <li><a class="js-scrollTo" href="#reservation">Réservation</a></li>
+                <li><a class="js-scrollTo" href="#diaporama">Aide</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- /====== DIAPORAMA ======/ -->
+
+    <section id="diaporama" class="diaporama">
+
+        <div id="conteneurDiaporama" class="conteneurDiaporama">
+
+            <figure>
+                <img id="imageDiaporama" src=""/>
+                <figcaption id="texteDiaporama"></figcaption>
+            </figure>
+
+        </div>
+
+        <div class="boutonsDiaporama">
+
+            <i class="fas fa-chevron-circle-left fa-3x" id="prev"></i>
+
+            <div class="stopPlay">
+
+                <i class="fas fa-stop-circle fa-3x" id="stop"></i>
+                <i class="fas fa-play-circle fa-3x" id="play"></i>
+
+            </div>
+
+            <i class="fas fa-chevron-circle-right fa-3x" id="next"></i>
+
+        </div>
+
+
+    </section>
+
+    <!-- /====== MAP et affichage des STATIONS ======/ -->
+
+    <section id="reservation" class="mapAndStations">
+
+        <!-- Google map -->
+        <div class="mapContainer">
+
+            <div id="map"></div>
+
+        </div>
+
+        <!-- Gestion des erreurs -->
+        <p id="erreurJcDecaux">Le site de JCDecaux semble momentanément rencontrer un problème.</p>
+
+        <p id="erreur">Un problème est survenu lors du chargement de la page</p>
+
+    <!-- Affichage des stations -->
+    <div id="affichageStations">
+
+        <h2>Station</h2>
+
+        <div id="resultatMarqueur">
+
+            <p><span class="bold">Nom : </span><span id="nomStation"></span></p>
+            <p><span class="bold">Adresse : </span><span id="adresseStation"></span></p>
+            <p><span class="bold">Etat : </span><span id="etatStation"></span></p>
+            <p><span class="bold">Total emplacements : </span><span id="totalEmplacements"></span></p>
+            <p><span class="bold">Vélos disponibles : </span><span id="velosDisponibles"></span></p>
+            <p><span class="bold">Emplacements libres restants : </span><span id="emplacementsDisponibles"></span></p>
+
+            <button type="button" id="boutonReservation">Réserver</button>
+
+            <p id="aucunVeloDisponible">Aucun vélo n'est disponible dans cette station</p>
+
+            <p id="stationFermee">La station est fermée</p>
+
+            <p id="dejaReserve">Vous avez déjà réservé un vélo dans cette station</p>
+
+        </div>
+
+        <!-- Zone Canvas pour la signature et validation de réservation -->
+        <div id="zoneCanvas">
+
+            <div class="containerCanvas">
+
+                <button type="button" id="resetButton">Reset</button>
+
+                <canvas id="mon_canvas" width="200" height="450">
+                    Texte alternatif pour les navigateurs ne supportant pas Canvas.
+                </canvas>
+
+            </div>
+
+            <div class="titreFermetureCanvas">
+
+                <p><span class="close">&times;</span></p>
+
+                <p class="veuillezSigner">Veuillez signer dans le cadre pour valider votre réservation</p>
+
+            </div>
+
+            <div>
+                <button type="button" id="boutonValidation">Valider la réservation</button>
+            </div>
+
+        </div>
+
+    </div> <!-- Fin de affichageStations -->
+
+    </section> <!-- Fin de mapAndStations -->
+
+    <!-- /====== FOOTER de RESERVATION ======/ -->
+
+    <footer id="bandeauReservation">
+
+        <div class="containerBandeauReservation">
+
+            <div class="texteReservation">
+
+                <p id="unVeloReserve">Vous avez réservé un vélo à la station <span id="stationVeloReserve"></span> pour <span id="compteur"></span></p>
+
+                <p id="aucunVeloReserve">Vous n'avez aucun vélo de réservé, veuillez sélectionner une station</p>
+
+            </div>
+
+
+            <button type="button" id="boutonAnnulation">Annuler</button>
+
+        </div>
+
+        <div class="liensFooter">
+
+            <a href=#>Aide et contact</a>
+            <a href=#>Accessibilité</a>
+            <a href=#>Plan du site</a>
+            <a href=#>Mentions légales</a>
+
+        </div>
+
+    </footer>
+
+    <a href="../../projetsocr.php" title="Page des projets" class="back-button"><i class="fas fa-undo fa-lg"></i></a>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=xxxxxx">
+    </script>
+    <script src="js/ajax.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scroll.js"></script>
+
+    <script src="js/markerclusterer.js"></script>
+    
+    <script src="js/diaporama.js"></script>
+    <script src="js/station.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/signature.js"></script>
+    <script src="js/compteur.js"></script>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>

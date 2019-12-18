@@ -1,0 +1,733 @@
+/* -------------------------- */
+/* ------- RESET CSS -------- */
+/* -------------------------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button, canvas {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* -------------------------- */
+/* ------- ALL -------- */
+/* -------------------------- */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+button {
+    color: #fff;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+}
+
+/*
+p, figcaption {
+    font-family: 'helvetica', 'arial', sans-serif;
+    font-size: 1em;
+}
+*/
+
+body {
+    font-family: 'helvetica', 'arial', sans-serif;
+    font-size: 1em;
+}
+
+i {
+    cursor: pointer;
+    color: #fff;
+}
+
+/* -------------------------- */
+/* ------- HEADER -------- */
+/* -------------------------- */
+
+#header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.logo {
+    float: left;
+    padding: 20px;
+    display: block;
+}
+
+.logoVelov {
+    width: 100px;
+}
+
+/* -------------------------- */
+/* ------- NAVIGATION -------- */
+/* -------------------------- */
+
+#header nav ul {
+    clear: both;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .2s ease-out;
+    transition: max-height .2s ease-out;
+}
+
+#header nav ul li a {
+    display: block;
+    padding: 2em;
+    color: #6A6E73;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+#header nav ul li a:hover {
+    background-color: #E8E8E8;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 36px 20px;
+    position: relative;
+}
+
+.navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    -webkit-transition: background .2s ease-out;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.navicon:before,
+.navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.navicon:before {
+    top: 5px;
+}
+
+.navicon:after {
+    top: -5px;
+}
+
+#header .menu-btn:checked ~ nav ul {
+    max-height: 350px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* -------------------------- */
+/* ------- DIAPORAMA -------- */
+/* -------------------------- */
+
+.diaporama img {
+    width: 100%;
+    height: auto;
+}
+
+.diaporama {
+    width: 100%;
+    margin-top: 74px;
+    background-color: #C4C4C4;
+    position: relative;
+    overflow: hidden;
+}
+
+.conteneurDiaporama {
+    width: 100%;
+}
+
+.conteneurDiaporama figure {
+    position: relative;
+    width: 100%;
+}
+
+.conteneurDiaporama figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+figcaption {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 0.4em;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 85px;
+}
+
+.boutonsDiaporama {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+#prev,
+#next,
+#stop,
+#play {
+    padding: 0.3em;
+    font-size: 1.7em;
+}
+
+#prev:hover,
+#next:hover,
+#stop:hover,
+#play:hover {
+    color: #FF0000;
+}
+
+
+/* -------------------------- */
+/* ------- GOOGLE MAP -------- */
+/* -------------------------- */
+
+.mapAndStations {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+
+.mapContainer {
+    height: 600px;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+  }
+
+/* ------- Gestion des erreurs -------- */
+
+#erreurJcDecaux {
+    background-color: #FF5A51;
+    color: #fff;
+    width: 100%;
+    height: 64px;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    left: 0;
+    display: none;
+}
+
+#erreur {
+    background-color: #FF5A51;
+    color: #fff;
+    width: 100%;
+    height: 64px;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    left: 0;
+    display: none;
+}
+
+/* --------------------------------------- */
+/* ------- AFFICHAGE des STATIONS -------- */
+/* --------------------------------------- */
+
+
+#affichageStations {
+    padding: 1em;
+    display: none;
+}
+
+#resultatMarqueur p {
+    font-size: 1.2em;
+    margin: 1em 0 1em 0;
+}
+
+#aucunVeloDisponible {
+    display: none;
+}
+
+#stationFermee {
+    display: none;
+}
+
+#dejaReserve {
+    display: none;
+}
+
+#boutonReservation {
+    background-color: #00CC3A;
+    display: none;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#boutonReservation:hover {
+    background-color: #00AB14;
+}
+
+
+/* --------------------------------------- */
+/* ------- CANVAS SIGNATURE -------- */
+/* --------------------------------------- */
+
+#zoneCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 51;
+}
+
+.containerCanvas {
+    position: relative;
+    height: 50vh;
+}
+
+#mon_canvas {
+    background-color: #fff;
+}
+
+#resetButton {
+    background-color: #636363;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#resetButton:hover {
+    background-color: #9E9E9E;
+}
+
+#boutonValidation {
+    background-color: #00CC3A;
+    width: 100%;
+    padding: 2em;
+    cursor: pointer;
+    display: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#boutonValidation:hover {
+    background-color: #00AB14;
+}
+
+.titreFermetureCanvas {
+    background-color: #ff0000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.close {
+    color: #fff;
+    padding: 0.3em;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+}
+
+.close:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.veuillezSigner {
+    color: #fff;
+    width: 85%;
+    padding: 0.7em;
+    font-size: 1em;
+    float: left;
+}
+
+/* --------------------------------------- */
+/* ------- FOOTER de RESERVATION -------- */
+/* --------------------------------------- */
+
+#bandeauReservation {
+    padding: 2em;
+    background-color: #403E3E;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.containerBandeauReservation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#unVeloReserve {
+    display: none;
+}
+
+#aucunVeloReserve {
+    display: none;
+}
+
+#boutonAnnulation {
+    background-color: #ff0000;
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#boutonAnnulation:hover {
+    background-color: #C70000;
+}
+
+.liensFooter {
+    border-top: 1px solid #fff;
+    margin-top: 30px;
+    padding-top: 20px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.liensFooter a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.7em;
+    margin-top: 10px;
+}
+
+/* -------------------------- */
+/* ------- BACK BUTTON -------- */
+/* -------------------------- */
+
+.back-button {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #FF8400;
+    z-index: 100;
+}
+
+.back-button i {
+    color: #fff;
+}
+
+
+/* --------------------------------------- */
+/* ------- MEDIA QUERIES -------- */
+/* --------------------------------------- */
+
+@media (min-width : 480px) {
+
+    .veuillezSigner {
+        width: 85%;
+        font-size: 1.2em;
+    }
+
+}
+
+
+@media (min-width: 576px) {
+
+    figcaption {
+        height: 65px;
+    }
+
+    .stopPlay {
+        display: block;
+    }
+
+}
+
+@media (min-width: 736px) {
+
+    .logoVelov {
+        width: 150px;
+    }
+
+    #header nav ul li a {
+        padding: 2.28em; /* correspond aux 89px de hauteur du header */
+    }
+
+    .diaporama {
+        margin-top: 89px;
+    }
+
+    #header nav ul {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    #header nav ul li {
+        float: left;
+    }
+
+    #header .menu-icon {
+        display: none;
+    }
+
+    .boutonsDiaporama {
+        display: inherit;
+    }
+
+    figcaption {
+        padding: 0.6em;
+        height: 110px;
+    }
+
+    #prev,
+    #next,
+    #stop,
+    #play {
+        padding: 0.3em;
+        font-size: 2.5em;
+    }
+
+    #prev, #next, .stopPlay {
+        position: absolute;
+    }
+
+    #prev {
+        top: 50%;
+        left: 0;
+        height: 86px;
+        margin-top: -43px;
+    }
+
+    #next {
+        top: 50%;
+        right: 0;
+        height: 86px;
+        margin-top: -43px;
+    }
+
+    .stopPlay {
+        bottom: 0;
+        left: 50%;
+        width: 178px;
+        margin-left: -89px;
+    }
+
+    #erreurJcDecaux {
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    #erreur {
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .containerBandeauReservation {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .texteReservation {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    #unVeloReserve {
+        padding-right: 2em;
+    }
+
+    #boutonAnnulation {
+        margin-top: 0px;
+        width: 20%;
+    }
+
+    .liensFooter {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .liensFooter a {
+        padding: 0 1em;
+    }
+
+}
+
+@media (min-width : 980px) {
+
+    figcaption {
+        font-size: 1.3em;
+        height: 150px;
+        padding: 1em;
+    }
+
+    #affichageStations {
+        position: absolute;
+        top: 100px;
+        right: 50px;
+        width: 360px;
+        background-color: rgba(222, 222, 222, 0.9);
+    }
+
+    #boutonAnnulation {
+        width: 15%;
+    }
+
+}
+
+@media (min-width : 1450px) {
+
+    figcaption {
+        font-size: 1.4em;
+        height: 150px;
+        padding: 1em;
+        text-align: center;
+    }
+
+}
+
+@media (min-width : 1600px) {
+
+    figcaption {
+        font-size: 1.6em;
+    }
+
+}
